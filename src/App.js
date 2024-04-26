@@ -1,25 +1,41 @@
-import logo from './logo.svg';
-import './App.css';
+// src/App.js
 
-function App() {
+import React from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import LoginPage from './LoginPage';
+import SignUpPage from './SignUpPage';
+import IkusasaProgram from './IkusasaProgram';
+import PersonalInfoPage from './PersonalInfoPage';
+import ForgotPassPage from './ForgotPassPage';
+import ResetPass from './ResetPass';
+import PersonalSec from './PersonalSec';
+import EducationPage from './EducationPage';
+import WorkExperience from './WorkExperience';
+import CreatePost from './CreatePost';
+import AuthPage from './AuthPage';
+
+//IkusasaProgram
+
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <Routes>
+      <Route path="/" element={<LoginPage />} />
+        <Route path="/signup" element={<SignUpPage />} />
+        <Route path="/ikusasaprogram" element={<IkusasaProgram />} />
+        <Route path="/personalinfo" element={<PersonalInfoPage />} />
+        <Route path="/forgotpassword" element={<ForgotPassPage />} />
+        <Route path="/ResetPass" element={<ResetPass />} />
+        <Route path="/PersonalSec" element={<PersonalSec />} />
+        <Route path="/EducationPage" element={<EducationPage />} />
+        <Route path="/WorkExperience" element={<WorkExperience />} />
+        <Route path="/CreatePost" element={<CreatePost />} />
+        <Route path="/AuthPage" element={<AuthPage />} />
+
+        {/* Add more routes for additional pages */}
+      </Routes>
+    </Router>
   );
-}
+};
 
 export default App;
